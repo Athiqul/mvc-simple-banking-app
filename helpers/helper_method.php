@@ -8,4 +8,18 @@ function dd($data):void
     echo '</pre>';
 }
 
+function view(string $view,array $data):void
+{
+    $viewPath =__DIR__. "/../views/{$view}.php";
+    //dd($viewPath);
+    if (file_exists($viewPath)) {
+        extract($data);
+       require_once $viewPath;
+       return;
+    } else {
+        dd("View not found: {$viewPath}");
+    }
+}
+
+
 ?>
