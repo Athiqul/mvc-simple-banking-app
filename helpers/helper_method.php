@@ -1,6 +1,9 @@
 <?php 
 
 //For display data and die 
+
+use App\core\RedirectHelper;
+
 function dd($data):void
 {
     echo '<pre>';
@@ -8,7 +11,7 @@ function dd($data):void
     echo '</pre>';
 }
 
-function view(string $view,array $data):void
+function view(string $view,array $data=[]):void
 {
     $viewPath =__DIR__. "/../views/{$view}.php";
     //dd($viewPath);
@@ -20,6 +23,13 @@ function view(string $view,array $data):void
         dd("View not found: {$viewPath}");
     }
 }
+
+//redirect 
+
+function redirect(){
+    return new RedirectHelper();
+}
+
 
 
 ?>

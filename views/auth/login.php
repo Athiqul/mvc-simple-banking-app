@@ -1,3 +1,13 @@
+<?php
+
+session_start();
+if(isset($_SESSION['errors']))
+{
+  extract($_SESSION['errors']);
+  unset($_SESSION['errors']);
+}
+?>
+
 <!DOCTYPE html>
 <html
   class="h-full bg-white"
@@ -43,7 +53,7 @@
         <div class="px-6 py-12 bg-white shadow sm:rounded-lg sm:px-12">
           <form
             class="space-y-6"
-            action="#"
+            action="<?=$app_url?>login"
             method="POST">
             <div>
               <label
@@ -60,6 +70,9 @@
                   required
                   class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-emerald-600 p-2 sm:text-sm sm:leading-6" />
               </div>
+              <?php if(isset($email)):?>
+                 <span class="text-red-500"><?=$email?></span>     
+              <?php endif?>
             </div>
 
             <div>
@@ -77,6 +90,10 @@
                   required
                   class="block w-full p-2 text-gray-900 border-0 rounded-md shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-emerald-600 sm:text-sm sm:leading-6" />
               </div>
+
+              <?php if(isset($email)):?>
+                 <span class="text-red-500"><?=$email?></span>     
+              <?php endif?>
             </div>
 
             <div>
