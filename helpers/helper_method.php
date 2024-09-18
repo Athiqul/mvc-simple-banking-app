@@ -4,6 +4,8 @@
 
 use App\core\RedirectHelper;
 
+$app_url="http://localhost:80/";
+
 function dd($data):void
 {
     echo '<pre>';
