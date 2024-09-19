@@ -4,7 +4,6 @@
 
 use App\core\RedirectHelper;
 
-$app_url="http://localhost:80/";
 
 function dd($data):void
 {
@@ -30,6 +29,10 @@ function view(string $view,array $data=[]):void
 
 function redirect(){
     return new RedirectHelper();
+}
+
+function storage_path($path = '') {
+    return __DIR__ . '/../storage/file/' . $path;
 }
 
 

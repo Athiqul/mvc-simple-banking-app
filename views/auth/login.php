@@ -6,6 +6,14 @@ if(isset($_SESSION['errors']))
   extract($_SESSION['errors']);
   unset($_SESSION['errors']);
 }
+
+if(isset($_SESSION['old']))
+{
+  dd($_SESSION['old']);
+  
+  unset($_SESSION['old']);
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -51,9 +59,12 @@ if(isset($_SESSION['errors']))
 
       <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-[480px]">
         <div class="px-6 py-12 bg-white shadow sm:rounded-lg sm:px-12">
+          <?php if($error):?>
+          <h2 class="text-danger text-center"><?=$error?></h2>
+          <?php endif?>
           <form
             class="space-y-6"
-            action="<?=$app_url?>login"
+            action="<?=App_Url?>login"
             method="POST">
             <div>
               <label

@@ -46,9 +46,9 @@ class Route{
         $uri = explode('?',$_SERVER['REQUEST_URI']);
         $method=$_SERVER['REQUEST_METHOD'];
 
-        if($method == 'POST' && $_POST['_method'])
+        if($method == 'POST' || isset($_POST['_method']))
         {
-            $method = $_POST['_method'];
+            $method = $_POST['_method']??'POST';
         }
 
        //  dd($method);

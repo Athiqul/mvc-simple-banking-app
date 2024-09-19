@@ -1,5 +1,5 @@
 <?php 
-namespace App\core\Trait;
+namespace App\core\traits\filesystem;
 
 trait FileDbTrait{
     
@@ -25,7 +25,37 @@ trait FileDbTrait{
     public function count(){
 
     }
-    public function where($column, $operator, $value){
+    public function where($column, $value){
+
+        //get files
+       // dd(__DIR__);
+        $file=storage_path($this->schema);
+        //dd($file);
+        //Check file exists or not
+        if(!file_exists($file))
+        {
+        
+            throw new \Exception("$this->schema is not created yet!");
+        }
+
+        $data=file_get_contents($file);
+        $users=json_decode($data, true);
+
+        if(json_last_error()!==JSON_ERROR_NONE)
+        {
+            throw new \Exception("Error Processing Request: ".json_last_error_msg());
+        }
+
+
+       $user= array_filter($users,function ($user) use ($column,$value){
+             return $user[$column] == $value;
+        });
+
+
+        return $user;
+
+
+       
 
     }
     public function orderBy($column, $order){
