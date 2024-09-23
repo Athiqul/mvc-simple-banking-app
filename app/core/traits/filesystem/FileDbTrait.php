@@ -3,8 +3,20 @@ namespace App\core\traits\filesystem;
 
 trait FileDbTrait{
     
-    public function save(){
+    public function save(array $user){
+        $file=storage_path($this->schema);
 
+        //Get existing file
+        $data=file_get_contents($file);
+        $users=json_decode($data, true);
+        //merge user to the users
+        $users[]=$user;
+        //convert users to json
+        $data=json_encode($users);
+        //save to json file
+        file_put_contents($file, $data);
+        return true;
+        
     }
     public function update(){
 
@@ -51,8 +63,10 @@ trait FileDbTrait{
              return $user[$column] == $value;
         });
 
+        $count=count($users);
 
-        return $user;
+
+        return $user[$count-1];
 
 
        

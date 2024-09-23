@@ -78,10 +78,10 @@
                 </div>
                 <div class="ml-3">
                   <div class="text-base font-medium text-white">
-                    Ahmed Shamim
+                    <?=$_SESSION['user']['name']?>
                   </div>
                   <div class="text-sm font-medium text-emerald-300">
-                    ahmed@shamim.com
+                  <?=$_SESSION['user']['email']?>
                   </div>
                 </div>
                 <button type="button" class="ml-auto flex-shrink-0 rounded-full bg-emerald-600 p-1 text-emerald-200 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-emerald-600">
@@ -100,7 +100,7 @@
         <header class="py-10">
           <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <h1 class="text-3xl font-bold tracking-tight text-white">
-              Howdy, Ahmed Shamim 👋
+              Howdy, <?=$_SESSION['user']['name']?> 👋
             </h1>
           </div>
         </header>

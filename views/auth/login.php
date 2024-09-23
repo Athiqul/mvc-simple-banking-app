@@ -1,6 +1,6 @@
 <?php
 
-session_start();
+
 if(isset($_SESSION['errors']))
 {
   extract($_SESSION['errors']);
@@ -64,7 +64,7 @@ if(isset($_SESSION['old']))
           <?php endif?>
           <form
             class="space-y-6"
-            action="<?=App_Url?>login"
+            action="<?=App_Url?>login-user"
             method="POST">
             <div>
               <label

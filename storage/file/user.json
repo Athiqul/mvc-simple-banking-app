@@ -1,42 +1,31 @@
-[
-    {
-        "id": 1,
-        "name": "John Doe",
-        "email": "john.doe@example.com",
-        "password": "$2y$10$abcdefghijklmnopqrstuv",
-        "created_at": "2024-08-01 12:00:00",
-        "updated_at": "2024-08-01 12:00:00"
-    },
-    {
-        "id": 2,
-        "name": "Jane Smith",
-        "email": "jane.smith@example.com",
-        "password": "$2y$10$1234567890abcdefghijklmn",
-        "created_at": "2024-08-02 13:30:00",
-        "updated_at": "2024-08-02 13:30:00"
-    },
-    {
-        "id": 3,
-        "name": "Alice Johnson",
-        "email": "alice.johnson@example.com",
-        "password": "$2y$10$mnopqrstuv1234567890abcd",
-        "created_at": "2024-08-03 14:45:00",
-        "updated_at": "2024-08-03 14:45:00"
-    },
-    {
-        "id": 4,
-        "name": "Bob Brown",
-        "email": "bob.brown@example.com",
-        "password": "$2y$10$abcd1234efgh5678ijklmnop",
-        "created_at": "2024-08-04 15:20:00",
-        "updated_at": "2024-08-04 15:20:00"
-    },
-    {
-        "id": 5,
-        "name": "Charlie Davis",
-        "email": "charlie.davis@example.com",
-        "password": "$2y$10$qwertyuiopasdfghjklzxcvbn",
-        "created_at": "2024-08-05 16:10:00",
-        "updated_at": "2024-08-05 16:10:00"
-    }
-]
+[{
+    "id": 1,
+    "name": "John Doe",
+    "email": "john.doe@example.com",
+    "password": "$2y$10$abcdefghijklmnopqrstuv",
+    "created_at": "2024-08-01 12:00:00",
+    "updated_at": "2024-08-01 12:00:00",
+    "role": "customer"
+}, {
+    "id": 2,
+    "name": "Jane Smith",
+    "email": "jane.smith@example.com",
+    "password": "$2y$10$1234567890abcdefghijklmn",
+    "created_at": "2024-08-02 13:30:00",
+    "updated_at": "2024-08-02 13:30:00",
+    "role": "customer"
+}, {
+    "id": 3,
+    "name": "Alice Johnson",
+    "email": "alice.johnson@example.com",
+    "password": "$2y$10$mnopqrstuv1234567890abcd",
+    "created_at": "2024-08-03 14:45:00",
+    "updated_at": "2024-08-03 14:45:00",
+    "role": "customer"
+}, {
+    "id": "66f16e9959bf2",
+    "name": "Athiqul Hasan",
+    "email": "athiqulhasan.4@gmail.com",
+    "password": "$2y$10$0SUsIaq5MjLTQG.0Oh5VWeCxaqgRjkRvwsh2kFasHunVuG\/UX.b4i",
+    "role": "customer"
+}]

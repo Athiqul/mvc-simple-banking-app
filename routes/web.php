@@ -9,11 +9,20 @@ $route=new Route();
 $route->get('/',\App\Controllers\Home::class,'index');
 
 $route->get('/login', Auth::class,'login');
-$route->post('/login', Auth::class,'checkLogin');
+$route->post('/login-user', Auth::class,'checkLogin');
 $route->get('/register',Auth::class,'register');
-$route->get('/admin-dashboard',Dashboard::class,'index');
+$route->post('/register', Auth::class,'storeUser');
+if(middleware('customer'))
+{
+    $route->get('/customers-dashboard',CustomersDash::class,'index');
+}
 
-$route->get('/customers-dashboard',CustomersDash::class,'index');
+if(middleware('admin'))
+ {
+    $route->get('/admin-dashboard',Dashboard::class,'index');
+}
+
+
 $route->route();
 
 ?>
