@@ -61,6 +61,13 @@ class Auth{
     public function register(){
        return view('auth/register');
     }
+
+    public function storeUser(){
+      extract($_POST);
+      
+    }
+
+    
 }
 
 ?>

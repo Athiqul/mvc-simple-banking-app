@@ -9,8 +9,8 @@ if(isset($_SESSION['errors']))
 
 if(isset($_SESSION['old']))
 {
-  dd($_SESSION['old']);
-  
+ // dd($_SESSION['old']);
+  $error= $_SESSION['old'][1];
   unset($_SESSION['old']);
 }
 
@@ -59,8 +59,8 @@ if(isset($_SESSION['old']))
 
       <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-[480px]">
         <div class="px-6 py-12 bg-white shadow sm:rounded-lg sm:px-12">
-          <?php if($error):?>
-          <h2 class="text-danger text-center"><?=$error?></h2>
+          <?php if(isset($error)):?>
+          <h2 class="text-red-500 text-center"><?=$error?></h2>
           <?php endif?>
           <form
             class="space-y-6"
@@ -120,7 +120,7 @@ if(isset($_SESSION['old']))
         <p class="mt-10 text-sm text-center text-gray-500">
           Don't have an account?
           <a
-            href="./register.html"
+            href="<?=App_Url?>register"
             class="font-semibold leading-6 text-emerald-600 hover:text-emerald-500"
             >Register</a
           >

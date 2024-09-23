@@ -23,6 +23,7 @@ class RedirectHelper {
 
     public function with(array $data)
     {
+       
         session_start();
         $_SESSION['old']=$data;
         return $this;
