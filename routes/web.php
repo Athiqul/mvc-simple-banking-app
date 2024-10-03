@@ -12,15 +12,13 @@ $route->get('/login', Auth::class,'login');
 $route->post('/login-user', Auth::class,'checkLogin');
 $route->get('/register',Auth::class,'register');
 $route->post('/register', Auth::class,'storeUser');
-if(middleware('customer'))
-{
+//Logout 
+$route->get('/logout',Auth::class,'logout');
     $route->get('/customers-dashboard',CustomersDash::class,'index');
-}
 
-if(middleware('admin'))
- {
+
     $route->get('/admin-dashboard',Dashboard::class,'index');
-}
+
 
 
 $route->route();

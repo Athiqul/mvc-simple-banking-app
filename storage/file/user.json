@@ -27,5 +27,11 @@
     "name": "Athiqul Hasan",
     "email": "athiqulhasan.4@gmail.com",
     "password": "$2y$10$0SUsIaq5MjLTQG.0Oh5VWeCxaqgRjkRvwsh2kFasHunVuG\/UX.b4i",
+    "role": "admin"
+}, {
+    "id": "66fe639c3b979",
+    "name": "Athiqul Hasan",
+    "email": "test@example.us",
+    "password": "$2y$10$W1ZSTJv14xJqycobRkxRueIJayPD280FBd6b9uh6URRYX2QCkzwyi",
     "role": "customer"
 }]

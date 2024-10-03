@@ -1,6 +1,6 @@
 <?php
 
-session_start();
+
 //dd($_SESSION['errors'][0]);
 if(isset($_SESSION['errors']))
 {

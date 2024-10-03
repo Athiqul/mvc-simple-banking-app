@@ -28,7 +28,50 @@ trait FileDbTrait{
     public function find($id){
 
     }
-    public function all(){
+    public function all($column='',$value=''){
+  //get files
+       // dd(__DIR__);
+       $file=storage_path($this->schema);
+       //dd($file);
+       //Check file exists or not
+       if(!file_exists($file))
+       {
+       
+           throw new \Exception("$this->schema is not created yet!");
+       }
+
+       $data=file_get_contents($file);
+       $users=json_decode($data, true);
+      // dd($users);
+
+       if(json_last_error()!==JSON_ERROR_NONE)
+       {
+           throw new \Exception("Error Processing Request: ".json_last_error_msg());
+       }
+
+
+      $users=array_map(function ($user) use($column,$value){
+        if($column==''||$value=='')
+        {
+            return $user;
+        }else{
+
+            if($user[$column] == $value)
+            {
+                return $user;
+            }
+        }
+        return null;
+      
+      },$users);
+
+      $users=array_values( array_filter($users));
+    
+       
+
+        
+       return $users??null;
+
 
     }
     public function paginate($perPage){
@@ -52,6 +95,7 @@ trait FileDbTrait{
 
         $data=file_get_contents($file);
         $users=json_decode($data, true);
+       // dd($users);
 
         if(json_last_error()!==JSON_ERROR_NONE)
         {
@@ -59,14 +103,14 @@ trait FileDbTrait{
         }
 
 
-       $user= array_filter($users,function ($user) use ($column,$value){
+       $user=array_values( array_filter($users,function ($user) use ($column,$value){
              return $user[$column] == $value;
-        });
+        }))[0];
+        //dd($user);
+        
 
-        $count=count($users);
-
-
-        return $user[$count-1];
+         
+        return $user?$user:null;
 
 
        

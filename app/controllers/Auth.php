@@ -8,9 +8,7 @@ class Auth{
        return view('auth/login');
     }
 
-    public function logout(){
-       // Implement logout functionality
-    }
+    
 
     public function checkLogin(){
         extract($_POST);
@@ -38,11 +36,12 @@ class Auth{
         $userModel=new User();
         $user=$userModel->where('email',$email);
        // dd($user);
-        if(count($user)<1)
+        if(!$user)
         {
          return redirect()->route('/login')->with(['error','Wrong credentials']); 
         }
 
+       // dd($user);
         if(!password_verify($password,$user['password']))
         {
 
@@ -57,6 +56,11 @@ class Auth{
         session_start();
         $_SESSION['user'] = $user;
         //dd($user);
+        if($user['role']=='admin')
+        {
+          return redirect()->route('/admin-dashboard')->with(['success','Successfully Logged in']);
+        } 
+
    
         return redirect()->route('/customers-dashboard')->with(['success','Successfully Logged in']);
     }
@@ -97,7 +101,7 @@ class Auth{
       //check email address already exists
       $userModel= new User();
       $checkEmail= $userModel->where('email',$email);
-      if(count($checkEmail)>0)
+      if($checkEmail)
       {
          // Email already exists
          $errors[]=['email'=>'Email already exists!'];
@@ -121,6 +125,13 @@ class Auth{
     }
 
     
+
+    public function logout ()
+    {
+
+      session_destroy();
+      return redirect()->route('/login');
+    }
 }
 
 ?>
