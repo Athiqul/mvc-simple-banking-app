@@ -30,6 +30,13 @@ class RedirectHelper {
         
     }
 
+    public function withInput(array $data)
+    {
+        session_start();
+        $_SESSION['old_input']=$data;
+        return $this;
+    }
+
     public function __destruct()
     {
         header("Location: {$this->url}");

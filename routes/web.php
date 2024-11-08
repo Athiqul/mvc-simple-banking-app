@@ -1,4 +1,6 @@
-<?php 
+<?php
+
+use App\Controllers\admin\Customers;
 use App\core\Route;
 use App\Controllers\Auth;
 use App\Controllers\admin\Dashboard;
@@ -18,6 +20,8 @@ $route->get('/logout',Auth::class,'logout');
 
 
     $route->get('/admin-dashboard',Dashboard::class,'index');
+    $route->get('/admin-customer-add',Customers::class,'create');
+    $route->post('/admin-customer-add',Customers::class,'store');
 
 
 

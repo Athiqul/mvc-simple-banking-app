@@ -50,6 +50,20 @@ function middleware($role)
     return true;
 }
 
+function old($field,$value='')
+{
+    //dd('hi');
+   if(!isset($_SESSION['old_input'])||!isset($_SESSION['old_input'][$field]))
+   {
+     echo $value;
+     
+   }else{
+    echo $_SESSION['old_input'][$field];
+   }
+   
+
+}
+
 
 
 ?>

@@ -10,7 +10,7 @@
                   <div class="flex space-x-4">
                     <!-- Current: "bg-sky-700 text-white", Default: "text-white hover:bg-sky-500 hover:bg-opacity-75" -->
                     <a
-                      href="./customers.html"
+                      href="<?=App_Url?>admin-dashboard"
                       class="px-3 py-2 text-sm font-medium text-white rounded-md bg-sky-700"
                       >Customers</a
                     >
@@ -59,7 +59,7 @@
                     aria-labelledby="user-menu-button"
                     tabindex="-1">
                     <a
-                      href="#"
+                      href="<?=App_Url?>logout"
                       class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                       role="menuitem"
                       tabindex="-1"
@@ -120,7 +120,7 @@
             id="mobile-menu">
             <div class="pt-2 pb-3 space-y-1">
               <a
-                href="./customers.html"
+                href="<?=App_Url?>admin-dashboard"
                 class="block px-3 py-2 text-base font-medium text-white rounded-md hover:bg-sky-500 hover:bg-opacity-75"
                 >Customers</a
               >
@@ -172,7 +172,7 @@
               </div>
               <div class="px-2 mt-3 space-y-1">
                 <a
-                  href="#"
+                  href="<?=App_Url?>logout"
                   class="block px-3 py-2 text-base font-medium text-white rounded-md hover:bg-sky-500 hover:bg-opacity-75"
                   >Sign out</a
                 >
@@ -184,7 +184,7 @@
         <header class="py-10">
           <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
             <h1 class="text-3xl font-bold tracking-tight text-white">
-              Customers
+              <?=$titleHeaders?>
             </h1>
           </div>
         </header>

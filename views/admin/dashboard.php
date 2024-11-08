@@ -56,7 +56,7 @@
                 </div>
                 <div class="mt-4 sm:ml-16 sm:mt-0 sm:flex-none">
                   <a
-                    href="./add_customer.html"
+                    href="<?=App_Url?>admin-customer-add"
                     type="button"
                     class="block px-3 py-2 text-sm font-semibold text-center text-white rounded-md shadow-sm bg-sky-600 hover:bg-sky-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-600">
                     Add Customer

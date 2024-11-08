@@ -13,8 +13,10 @@ class Dashboard{
 
         //Get All the customers
         $customers = $this->userModel->all('role','customer');
+        //Make title dynamic for headers
+        $titleHeaders="Customers";
         
-        return view('admin/dashboard',compact('customers'));
+        return view('admin/dashboard',compact('customers','titleHeaders'));
     }
 
     
