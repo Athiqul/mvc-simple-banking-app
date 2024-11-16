@@ -9,7 +9,7 @@
                     <!-- Current: "bg-emerald-700 text-white", Default: "text-white hover:bg-emerald-500 hover:bg-opacity-75" -->
                     <a href="<?=App_Url?>customers-dashboard" class="bg-emerald-700 text-white rounded-md py-2 px-3 text-sm font-medium" aria-current="page">Dashboard</a>
                     <a href="<?=App_Url?>customers-deposit" class="text-white hover:bg-emerald-500 hover:bg-opacity-75 rounded-md py-2 px-3 text-sm font-medium">Deposit</a>
-                    <a href="./withdraw.html" class="text-white hover:bg-emerald-500 hover:bg-opacity-75 rounded-md py-2 px-3 text-sm font-medium">Withdraw</a>
+                    <a href="<?=App_Url?>customers-withdraw" class="text-white hover:bg-emerald-500 hover:bg-opacity-75 rounded-md py-2 px-3 text-sm font-medium">Withdraw</a>
                     <a href="./transfer.html" class="text-white hover:bg-emerald-500 hover:bg-opacity-75 rounded-md py-2 px-3 text-sm font-medium">Transfer</a>
                   </div>
                 </div>
@@ -61,7 +61,7 @@
 
               <a href="<?=App_Url?>customers-deposit" class="text-white hover:bg-emerald-500 hover:bg-opacity-75 block rounded-md py-2 px-3 text-base font-medium">Deposit</a>
 
-              <a href="./withdraw.html" class="text-white hover:bg-emerald-500 hover:bg-opacity-75 block rounded-md py-2 px-3 text-base font-medium">Withdraw</a>
+              <a href="<?=App_Url?>customers-withdraw" class="text-white hover:bg-emerald-500 hover:bg-opacity-75 block rounded-md py-2 px-3 text-base font-medium">Withdraw</a>
 
               <a href="./transfer.html" class="text-white hover:bg-emerald-500 hover:bg-opacity-75 block rounded-md py-2 px-3 text-base font-medium">Transfer</a>
             </div>

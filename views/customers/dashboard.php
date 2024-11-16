@@ -86,7 +86,7 @@
                           <?=strtoupper( $value['trxid'])?>
                         </td>
                         <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm text-gray-500 sm:pl-0">
-                          <?=$value['type']==1?'DEPOSIT':''?>
+                          <?=$value['type']==1?'DEPOSIT':($value['type']==2?'WITHDRAW':'TRANSFER')?>
                         </td>
                         <td class="whitespace-nowrap px-2 py-4 text-sm font-medium text-emerald-600">
                           <?php if($value['type']==1|| $value['type']== 2):?>
