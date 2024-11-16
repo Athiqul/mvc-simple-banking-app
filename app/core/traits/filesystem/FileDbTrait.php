@@ -61,9 +61,8 @@ trait FileDbTrait
     {
         $file = storage_path($this->schema);
 
-        //Get existing file
-        $data = file_get_contents($file);
-        $existingData = json_decode($data, true);
+        
+        $existingData =$this->loadFile($file);
         //merge existingData with parameter arrayData
         $find = array_filter($existingData, function ($item) use ($email) {
             return $item["email"] == $email;

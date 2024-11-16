@@ -23,6 +23,7 @@ class Deposit{
     //Store Deposit Amount
     public function depositStore()
     {
+        unset($_SESSION['old']);
 
         try{
 
@@ -53,7 +54,9 @@ class Deposit{
             'userBalance'=>$user['balance'],
             'type'=>1,
             'amount'=>$amount,
-            'trxid'=>uniqid('DEP')
+            'trxid'=>uniqid('DEP'),
+            'receiverName'=>'',
+            'receiverEmail'=>'',
         ];
 
         $this->trxModel->save($transaction);

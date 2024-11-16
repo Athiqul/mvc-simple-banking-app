@@ -9,11 +9,5 @@ if(isset($_SESSION['errors']))
   unset($_SESSION['errors']);
 }
 
-if(isset($_SESSION['old']))
-{
- // dd($_SESSION['old']);
-  $error= $_SESSION['old'][1];
-  unset($_SESSION['old']);
-}
 
 ?>

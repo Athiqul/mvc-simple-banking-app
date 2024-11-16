@@ -11,6 +11,7 @@ class Dashboard{
         $this->trxModel = new Transactions();
     }
     public function index(){
+       // dd($_SESSION['old']);
         $userEmail=$_SESSION['user']['email'];
         $user=$this->userModel->findByEmail($userEmail);
         $transactions=$this->trxModel->all('userEmail',$userEmail);

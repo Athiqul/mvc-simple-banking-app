@@ -23,6 +23,7 @@ class Withdraw{
     //Store withDraw Amount
     public function withdrawAmount()
     {
+        unset($_SESSION['old']);
 
         try{
 
@@ -32,7 +33,7 @@ class Withdraw{
         if(!is_numeric($amount)||$amount<1)
         {
           $errors[] = ['amount'=>'Amount should be numeric and positive value'];
-          return redirect()->route('/customers-deposit')->withErrors($errors)->withInput($_POST);
+          return redirect()->route('/customers-withdraw')->withErrors($errors)->withInput($_POST);
         }
         
         $userEmail=$_SESSION['user']['email'];
@@ -48,7 +49,7 @@ class Withdraw{
         if($amount>$user['balance'])
         {
             $errors[] = ['amount'=>'Amount should be less than main balance'];
-            return redirect()->route('/customers-deposit')->withErrors($errors)->withInput($_POST);
+            return redirect()->route('/customers-withdraw')->withErrors($errors)->withInput($_POST);
         }
 
         $user['balance'] -= $amount;
@@ -60,7 +61,9 @@ class Withdraw{
             'userBalance'=>$user['balance'],
             'type'=>2,
             'amount'=>$amount,
-            'trxid'=>uniqid('DEP')
+            'trxid'=>uniqid('WD'),
+            'receiverName'=>'',
+            'receiverEmail'=>'',
         ];
 
         $this->trxModel->save($transaction);

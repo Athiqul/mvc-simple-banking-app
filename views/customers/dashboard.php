@@ -92,17 +92,20 @@
                           <?php if($value['type']==1|| $value['type']== 2):?>
                             Self
                           <?php else:?>
+                            <?=$value['receiverName']?>
                           <?php endif?>  
                         </td>
                         <td class="whitespace-nowrap px-2 py-4 text-sm text-gray-500">
                         <?php if($value['type']==1|| $value['type']== 2):?>
                             Self
                           <?php else:?>
+                            <?=$value['receiverEmail']?>
                           <?php endif?>  
                         </td>
                         <td class="whitespace-nowrap px-2 py-4 text-sm text-gray-500">
                         <?php if($value['type']==2|| $value['type']== 3):?>
-                            -$<?=number_format($value['amount'],2)?>
+
+                            <?=$value['type']==2?'-':($value['balance_added']==0?'-':'+')?>$<?=number_format($value['amount'],2)?>
                           <?php else:?>
                             +$<?=number_format($value['amount'],2)?>
                           <?php endif?>  

@@ -10,7 +10,7 @@
                     <a href="<?=App_Url?>customers-dashboard" class="bg-emerald-700 text-white rounded-md py-2 px-3 text-sm font-medium" aria-current="page">Dashboard</a>
                     <a href="<?=App_Url?>customers-deposit" class="text-white hover:bg-emerald-500 hover:bg-opacity-75 rounded-md py-2 px-3 text-sm font-medium">Deposit</a>
                     <a href="<?=App_Url?>customers-withdraw" class="text-white hover:bg-emerald-500 hover:bg-opacity-75 rounded-md py-2 px-3 text-sm font-medium">Withdraw</a>
-                    <a href="./transfer.html" class="text-white hover:bg-emerald-500 hover:bg-opacity-75 rounded-md py-2 px-3 text-sm font-medium">Transfer</a>
+                    <a href="<?=App_Url?>customers-transfer" class="text-white hover:bg-emerald-500 hover:bg-opacity-75 rounded-md py-2 px-3 text-sm font-medium">Transfer</a>
                   </div>
                 </div>
               </div>
@@ -63,7 +63,7 @@
 
               <a href="<?=App_Url?>customers-withdraw" class="text-white hover:bg-emerald-500 hover:bg-opacity-75 block rounded-md py-2 px-3 text-base font-medium">Withdraw</a>
 
-              <a href="./transfer.html" class="text-white hover:bg-emerald-500 hover:bg-opacity-75 block rounded-md py-2 px-3 text-base font-medium">Transfer</a>
+              <a href="<?=App_Url?>customers-transfer" class="text-white hover:bg-emerald-500 hover:bg-opacity-75 block rounded-md py-2 px-3 text-base font-medium">Transfer</a>
             </div>
             <div class="border-t border-emerald-700 pb-3 pt-4">
               <div class="flex items-center px-5">

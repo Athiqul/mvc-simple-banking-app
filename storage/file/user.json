@@ -5,8 +5,18 @@
         "email": "athiqulhasan.4@gmail.com",
         "password": "$2y$10$6Dln37U.C\/cL1\/kADRL6GeB\/lqsLjvU4ptPUntwCdwU1Aggvb8Grm",
         "role": "customer",
-        "balance": 83772,
+        "balance": 6469,
         "created_at": "2024-11-16 14:18:43",
-        "updated_at": "2024-11-16 16:10:04"
+        "updated_at": "2024-11-16 17:29:15"
+    },
+    {
+        "id": "6738bc33db7f6",
+        "name": "TestUser",
+        "email": "test@example.us",
+        "password": "$2y$10$AJKJAQYlfX\/nJHCgP6rVTeZy3inKqPEx23EuvQgS6W7CtjSU1y7Ta",
+        "role": "customer",
+        "balance": 47857,
+        "created_at": "2024-11-16 16:37:23",
+        "updated_at": "2024-11-16 17:29:15"
     }
 ]
