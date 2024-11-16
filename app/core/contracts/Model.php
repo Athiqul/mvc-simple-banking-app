@@ -3,7 +3,7 @@ namespace App\core\Contracts;
 
 interface Model{
     public function save(array $user);
-    public function update();
+    public function update($needle,array $data);
     public function delete();
     public function findByEmail($email);
     public function all();

@@ -1,10 +1,20 @@
-[{
-    "userEmail":"",
-    "userBalance":"",
-    "type":"",
-    "amount":"",
-    "recipient":"",
-    "recipientBal":"",
-    "trxid":"",
-    "transactionDate":""
-}]
+[
+    {
+        "userEmail": "athiqulhasan.4@gmail.com",
+        "userBalance": 89238,
+        "type": 1,
+        "amount": "89238",
+        "trxid": "DEP67389bce4643f",
+        "created_at": "2024-11-16 14:19:10",
+        "updated_at": "2024-11-16 14:19:10"
+    },
+    {
+        "userEmail": "athiqulhasan.4@gmail.com",
+        "userBalance": 90472,
+        "type": 1,
+        "amount": "1234",
+        "trxid": "DEP6738a088874b1",
+        "created_at": "2024-11-16 14:39:20",
+        "updated_at": "2024-11-16 14:39:20"
+    }
+]

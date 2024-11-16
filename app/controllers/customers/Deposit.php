@@ -23,7 +23,10 @@ class Deposit{
     //Store Deposit Amount
     public function depositStore()
     {
-        $amount=$_POST['amount'];
+
+        try{
+
+            $amount=$_POST['amount'];
         //Validation 
         $errors=[];
         if(!is_numeric($amount)||$amount<1)
@@ -44,7 +47,28 @@ class Deposit{
         $user['balance'] += $amount;
 
         //Save Transactions
+
+        $transaction=[
+            'userEmail'=> $userEmail,
+            'userBalance'=>$user['balance'],
+            'type'=>1,
+            'amount'=>$amount,
+            'trxid'=>uniqid('DEP')
+        ];
+
+        $this->trxModel->save($transaction);
+        //Update User Balance
+        $this->userModel->update($userEmail,$user);
+
+        return redirect()->route('/customers-dashboard')->with(['success'=>"\$".number_format($amount,2)." deposit request successfully accepted and added to your account balance "]);
+
+        }catch(\Exception $e)
+
+        {
+            dd($e->getMessage());
+        }
         
+
 
     }
 }

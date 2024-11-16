@@ -1,1 +1,12 @@
-[{"id":"6737db9ea8879","name":"Athiqul Hasan","email":"athiqulhasan.4@gmail.com","password":"$2y$10$BtGM8VC2VPqqdV6Zyfs1j.dIeRPrdp6LNl.D3k4mOTZv\/sAa4zDtm","role":"customer","balance":0}]
+[
+    {
+        "id": "67389bb2e8e89",
+        "name": "Athiqul Hasan",
+        "email": "athiqulhasan.4@gmail.com",
+        "password": "$2y$10$6Dln37U.C\/cL1\/kADRL6GeB\/lqsLjvU4ptPUntwCdwU1Aggvb8Grm",
+        "role": "customer",
+        "balance": 90472,
+        "created_at": "2024-11-16 14:18:43",
+        "updated_at": "2024-11-16 14:39:20"
+    }
+]
