@@ -7,8 +7,8 @@
                 <div class="hidden sm:block">
                   <div class="flex space-x-4">
                     <!-- Current: "bg-emerald-700 text-white", Default: "text-white hover:bg-emerald-500 hover:bg-opacity-75" -->
-                    <a href="./dashboard.html" class="bg-emerald-700 text-white rounded-md py-2 px-3 text-sm font-medium" aria-current="page">Dashboard</a>
-                    <a href="./deposit.html" class="text-white hover:bg-emerald-500 hover:bg-opacity-75 rounded-md py-2 px-3 text-sm font-medium">Deposit</a>
+                    <a href="<?=App_Url?>customers-dashboard" class="bg-emerald-700 text-white rounded-md py-2 px-3 text-sm font-medium" aria-current="page">Dashboard</a>
+                    <a href="<?=App_Url?>customers-deposit" class="text-white hover:bg-emerald-500 hover:bg-opacity-75 rounded-md py-2 px-3 text-sm font-medium">Deposit</a>
                     <a href="./withdraw.html" class="text-white hover:bg-emerald-500 hover:bg-opacity-75 rounded-md py-2 px-3 text-sm font-medium">Withdraw</a>
                     <a href="./transfer.html" class="text-white hover:bg-emerald-500 hover:bg-opacity-75 rounded-md py-2 px-3 text-sm font-medium">Transfer</a>
                   </div>
@@ -59,7 +59,7 @@
             <div class="space-y-1 pt-2 pb-3">
               <a href="./dashboard.html" class="bg-emerald-700 text-white block rounded-md py-2 px-3 text-base font-medium" aria-current="page">Dashboard</a>
 
-              <a href="./deposit.html" class="text-white hover:bg-emerald-500 hover:bg-opacity-75 block rounded-md py-2 px-3 text-base font-medium">Deposit</a>
+              <a href="<?=App_Url?>customers-deposit" class="text-white hover:bg-emerald-500 hover:bg-opacity-75 block rounded-md py-2 px-3 text-base font-medium">Deposit</a>
 
               <a href="./withdraw.html" class="text-white hover:bg-emerald-500 hover:bg-opacity-75 block rounded-md py-2 px-3 text-base font-medium">Withdraw</a>
 
@@ -100,7 +100,11 @@
         <header class="py-10">
           <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <h1 class="text-3xl font-bold tracking-tight text-white">
+              <?php if(isset($title)):?>
+                <?=ucwords($title)?>
+              <?php else:?>
               Howdy, <?=$_SESSION['user']['name']?> 👋
+              <?php endif?>
             </h1>
           </div>
         </header>

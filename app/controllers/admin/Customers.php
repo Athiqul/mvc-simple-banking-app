@@ -39,12 +39,7 @@ class Customers {
            return redirect()->route('/admin-customer-add')->withErrors($errors)->withInput($_POST);
       }
 
-      //Check password at least contain one special character
-      if(!preg_match('/[_W]/',$password))
-      {
-        $errors[]=['password'=> 'Password must contain one special character at least!'];
-        return redirect()->route('/admin-customer-add')->withErrors($errors)->withInput($_POST);
-      }
+  
        //Check password contain at least one digits or not
       if(!preg_match('/[0-9]/',$password))
       {
@@ -64,7 +59,7 @@ class Customers {
         return redirect()->route('/admin-customer-add')->withErrors($errors)->withInput($_POST);
       }
 
-      if(!isset($email)||filter_var($email, FILTER_VALIDATE_EMAIL))
+      if(!isset($email)||!filter_var($email, FILTER_VALIDATE_EMAIL))
       {
         $errors[]=['email'=> 'Please provide valid email address'];
         return redirect()->route('/admin-customer-add')->withErrors($errors)->withInput($_POST);
@@ -86,7 +81,8 @@ class Customers {
             'name'=>$name,
             'email'=>$email,
             'password'=>password_hash($password,PASSWORD_DEFAULT),
-            'role'=>'customer'
+            'role'=>'customer',
+            'balance'=>0,
           ]))
 
           {

@@ -5,7 +5,7 @@ interface Model{
     public function save(array $user);
     public function update();
     public function delete();
-    public function find($id);
+    public function findByEmail($email);
     public function all();
     public function paginate($perPage);
     public function count();

@@ -116,6 +116,7 @@ class Auth{
         'email'=>$email,
         'password'=>password_hash($password,PASSWORD_DEFAULT),
         'role'=>'customer',
+        'balance'=>0,
       ];
       //dd($user);
       // Save user to the database

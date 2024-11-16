@@ -5,6 +5,8 @@ use App\core\Route;
 use App\Controllers\Auth;
 use App\Controllers\admin\Dashboard;
 use App\Controllers\customers\Dashboard as CustomersDash;
+use App\Controllers\customers\Deposit;
+
 $route=new Route();
 
 // Define your routes here
@@ -16,12 +18,19 @@ $route->get('/register',Auth::class,'register');
 $route->post('/register', Auth::class,'storeUser');
 //Logout 
 $route->get('/logout',Auth::class,'logout');
+ //Customers Route
     $route->get('/customers-dashboard',CustomersDash::class,'index');
+    $route->get('/customers-deposit',Deposit::class,'depositView');
+    $route->post('/customers-deposit',Deposit::class,'depositStore');
 
 
     $route->get('/admin-dashboard',Dashboard::class,'index');
     $route->get('/admin-customer-add',Customers::class,'create');
     $route->post('/admin-customer-add',Customers::class,'store');
+
+
+   
+
 
 
 

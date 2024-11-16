@@ -3,16 +3,16 @@ namespace App\core\traits\filesystem;
 
 trait FileDbTrait{
     
-    public function save(array $user){
+    public function save(array $arrayData){
         $file=storage_path($this->schema);
 
         //Get existing file
         $data=file_get_contents($file);
-        $users=json_decode($data, true);
-        //merge user to the users
-        $users[]=$user;
-        //convert users to json
-        $data=json_encode($users);
+        $existingData=json_decode($data, true);
+        //merge existingData with parameter arrayData
+        $existingData[]=$arrayData;
+        //convert added new parameter data with existing data
+        $data=json_encode($existingData);
         //save to json file
         file_put_contents($file, $data);
         return true;
@@ -25,8 +25,17 @@ trait FileDbTrait{
     {
 
     }
-    public function find($id){
+    public function findByEmail($email){
+        $file=storage_path($this->schema);
 
+        //Get existing file
+        $data=file_get_contents($file);
+        $existingData=json_decode($data, true);
+        //merge existingData with parameter arrayData
+        $find=array_filter($existingData,function ($item) use($email){
+            return $item["email"]==$email;
+        });
+        return reset($find)?:null;
     }
     public function all($column='',$value=''){
   //get files
