@@ -15,7 +15,7 @@
                       >Customers</a
                     >
                     <a
-                      href="./transactions.html"
+                      href="<?=App_Url?>admin-customers-transaction-history"
                       class="px-3 py-2 text-sm font-medium text-white rounded-md hover:bg-sky-500 hover:bg-opacity-75"
                       >Transactions</a
                     >
@@ -39,7 +39,7 @@
                       <span
                         class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-sky-100">
                         <span class="font-medium leading-none text-sky-700"
-                          >AS</span
+                          ><?=nameShort($_SESSION['user']['name'])?></span
                         >
                       </span>
                       <!-- <img
@@ -125,7 +125,7 @@
                 >Customers</a
               >
               <a
-                href="./transactions.html"
+                href="<?=App_Url?>admin-customers-transaction-history"
                 class="block px-3 py-2 text-base font-medium text-white rounded-md hover:bg-sky-500 hover:bg-opacity-75"
                 >Transactions</a
               >

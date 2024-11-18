@@ -74,19 +74,14 @@
                       <li
                       class="relative flex justify-between px-4 py-5 gap-x-6 hover:bg-gray-50 sm:px-6 lg:px-8">
                       <div class="flex gap-x-4">
-                        <!-- You can either use image or name initials as avatar -->
-                        <!-- <img
-                          class="flex-none w-12 h-12 rounded-full bg-gray-50"
-                          src="https://avatars.githubusercontent.com/u/61485238"
-                          alt="Al Nahian" /> -->
+                       
                         <span
                           class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-sky-500">
                           <span
                             class="text-xl font-medium leading-none text-white"
                             ><?php 
-                            $name=$customer['name'];
-                            $data=explode(' ', $name);
-                            echo strtoupper($data[0][0]. $data[1][0]);
+                           echo nameShort($customer['name']);
+
                             ?></span
                           >
                         </span>

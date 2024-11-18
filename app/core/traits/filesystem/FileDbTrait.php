@@ -71,25 +71,9 @@ trait FileDbTrait
     }
     public function all($column = '', $value = '')
     {
-        //get files
-        // dd(__DIR__);
-        $file = storage_path($this->schema);
-        //dd($file);
-        //Check file exists or not
-        if (!file_exists($file)) {
-
-            throw new \Exception("$this->schema is not created yet!");
-        }
-
-        $data = file_get_contents($file);
-        $users = json_decode($data, true);
-        // dd($users);
-
-        if (json_last_error() !== JSON_ERROR_NONE) {
-            throw new \Exception("Error Processing Request: " . json_last_error_msg());
-        }
-
-
+        
+        $file = storage_path($this->schema);        
+        $users = $this->loadFile($file);
         $users = array_map(function ($user) use ($column, $value) {
             if ($column == '' || $value == '') {
                 return $user;
@@ -114,33 +98,14 @@ trait FileDbTrait
     public function where($column, $value)
     {
 
-        //get files
-        // dd(__DIR__);
         $file = storage_path($this->schema);
-        //dd($file);
-        //Check file exists or not
-        if (!file_exists($file)) {
-
-            throw new \Exception("$this->schema is not created yet!");
-        }
-
-        $data = file_get_contents($file);
-        $users = json_decode($data, true);
-        // dd($users);
-
-        if (json_last_error() !== JSON_ERROR_NONE) {
-            throw new \Exception("Error Processing Request: " . json_last_error_msg());
-        }
-
+        $users =$this->loadFile($file);
 
         $user = array_values(array_filter($users, function ($user) use ($column, $value) {
             return $user[$column] == $value;
-        }))[0];
-        //dd($user);
+        }));
 
-
-
-        return $user ? $user : null;
+        return reset($user) ?: null;
     }
     public function orderBy($column, $order) {}
     public function join($table, $foreignKey, $localKey) {}

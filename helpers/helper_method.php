@@ -64,6 +64,48 @@ function old($field,$value='')
 
 }
 
+if(!function_exists('nameShort'))
+{
+    function nameShort(string $name)
+    {
+        $endIndex=strlen($name)-1;
+        return strtoupper($name[0].$name[$endIndex]);
+    }
+}
+
+if(!function_exists('transactionType'))
+{
+    function transactionType(string $type)
+    {
+        return match($type){
+            '1'=>'DEPOSIT',
+            '2'=> 'WITHDRAW',
+            '3'=> 'TRANSFER',
+            default => ''
+        };
+
+    }
+    function isTransferType(string $type)
+    {
+        return $type=='3'? true : false;
+    }
+
+    function isBalanceAdded(string $type,bool $isBalanceAdded=false)
+    {
+        if($type== '1')
+        {
+            return true;
+        }else if($type== '2')
+        {
+            return false;
+        }else {
+             return $isBalanceAdded;
+        }
+
+    }
+
+}
+
 
 
 ?>
