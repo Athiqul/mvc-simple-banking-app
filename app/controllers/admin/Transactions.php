@@ -41,13 +41,17 @@ class Transactions {
     
     public function userHistory(string $userId)
     {
+        //dd($userId);
         $user=$this->userModel->where('id',$userId);
         if(!$user)
         {
             throw new \Exception('User does not exist');
         }
 
+        
+
         $transactions=$this->transactionsModel->all('userEmail',$user['email']);
+        dd($transactions);
 
         return view('');
     }

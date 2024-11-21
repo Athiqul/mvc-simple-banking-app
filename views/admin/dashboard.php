@@ -89,7 +89,7 @@
                         <div class="flex-auto min-w-0">
                           <p
                             class="text-sm font-semibold leading-6 text-gray-900">
-                            <a href="./customer_transactions.html">
+                            <a href="<?=App_Url?>admin-customer-transaction/<?=$customer['id']?>">
                               <span
                                 class="absolute inset-x-0 bottom-0 -top-px"></span>
                              <?=$customer['name']?>
@@ -97,7 +97,7 @@
                           </p>
                           <p class="flex mt-1 text-xs leading-5 text-gray-500">
                             <a
-                              href="./customer_transactions.html"
+                              href="<?=App_Url?>admin-customer-transaction/<?=$customer['id']?>"
                               class="relative truncate hover:underline"
                               ><?=$customer['email']?></a
                             >

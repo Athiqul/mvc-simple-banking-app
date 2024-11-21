@@ -44,6 +44,7 @@ class Route{
     {
         //get the requested uri
         $uri = explode('?',$_SERVER['REQUEST_URI']);
+        //dd($uri);
         $method=$_SERVER['REQUEST_METHOD'];
 
         if($method == 'POST' || isset($_POST['_method']))
@@ -56,13 +57,25 @@ class Route{
         //dd($this->route);
 
         foreach($this->route as $route){
-           // dd($route);
+
+            
             if($this->uriCheck($route['uri'],$uri[0]) && $route['method']==strtoupper($method)){
+               
                 $controller=new $route['controller'];
-                $controller->{$route['action']}();
-                return;
+
+                
+                if($this->checkParameter($route['uri'],$uri[0])==false)
+                {
+                    return $controller->{$route['action']}();
+                }
+                
+                return $controller->{$route['action']}($this->checkParameter($route['uri'],$uri[0]));
+                
             }
+
         }
+
+       
         
         //if no route found
         $this->abort('No route found');
@@ -75,21 +88,22 @@ class Route{
         if($reqUri == $routeUri){
             return true;
         }
-        //dd($routeUri);
+       
         $routeUri=explode('/',trim( $routeUri,'/'));
         $reqUri=explode('/',trim( $reqUri,'/'));
-        if($reqUri[0] !== $routeUri[0]){
+       // dd($reqUri);
+        if($reqUri[0] != $routeUri[0]){
             return false;
         }
-        if(count($reqUri)!==count($routeUri)){
+        if(count($reqUri)!=count($routeUri)){
           return false;
         }
         foreach($routeUri as $index=>$route){
-            if($route[$index]=='{id}')
+            if($route=='{id}')
             {
               continue;
             }
-            if($route[$index]!=$reqUri[$index])
+            if($route!=$reqUri[$index])
             {
               return  false;
             }
@@ -98,9 +112,16 @@ class Route{
         return true;
     }
 
-    private function checkParameter(string $routeUri)
+    private function checkParameter(string $routeUri,string $reqUri):bool|string
     {
-        
+       // dd("HI");
+        $routeUri=explode('/',trim( $routeUri,'/'));
+        $reqUri=explode('/',trim( $reqUri,'/'));
+        if($routeUri[count($routeUri)-1]=='{id}')
+        {
+            return $reqUri[count($routeUri)-1];
+        }
+        return false;
     }
 
     public function abort(string $message, int $code=404)
