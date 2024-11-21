@@ -51,11 +51,13 @@ class Route{
             $method = $_POST['_method']??'POST';
         }
 
-       //  dd($method);
+       //  dd($uri);
         //check uri and method is valid or not
+        //dd($this->route);
 
         foreach($this->route as $route){
-            if($route['uri']==$uri[0] && $route['method']==strtoupper($method)){
+           // dd($route);
+            if($this->uriCheck($route['uri'],$uri[0]) && $route['method']==strtoupper($method)){
                 $controller=new $route['controller'];
                 $controller->{$route['action']}();
                 return;
@@ -66,6 +68,39 @@ class Route{
         $this->abort('No route found');
        
 
+    }
+
+    private function uriCheck($routeUri,$reqUri):bool
+    {
+        if($reqUri == $routeUri){
+            return true;
+        }
+        //dd($routeUri);
+        $routeUri=explode('/',trim( $routeUri,'/'));
+        $reqUri=explode('/',trim( $reqUri,'/'));
+        if($reqUri[0] !== $routeUri[0]){
+            return false;
+        }
+        if(count($reqUri)!==count($routeUri)){
+          return false;
+        }
+        foreach($routeUri as $index=>$route){
+            if($route[$index]=='{id}')
+            {
+              continue;
+            }
+            if($route[$index]!=$reqUri[$index])
+            {
+              return  false;
+            }
+        }
+
+        return true;
+    }
+
+    private function checkParameter(string $routeUri)
+    {
+        
     }
 
     public function abort(string $message, int $code=404)

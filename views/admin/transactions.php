@@ -66,10 +66,10 @@
                           Type
                         </th>
                         <th scope="col" class="whitespace-nowrap py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-0">
-                          Customer Name
+                         Sender
                         </th>
                         <th scope="col" class="whitespace-nowrap py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-0">
-                          Email
+                          Receiver
                         </th>
                         <th scope="col" class="whitespace-nowrap px-2 py-3.5 text-left text-sm font-semibold text-gray-900">
                           Amount
@@ -96,7 +96,7 @@
                             <?=$value['customerName']?>
                         </td>
                         <td class="whitespace-nowrap px-2 py-4 text-sm text-gray-500">
-                            <?=$value['userEmail']?>
+                            <?=$value['receiverName']==''?'SELF':$value['receiverName']?>
                          
                         </td>
                         <td class="whitespace-nowrap px-2 py-4 text-sm text-gray-500">

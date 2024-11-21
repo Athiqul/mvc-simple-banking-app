@@ -35,6 +35,7 @@ $route->get('/logout',Auth::class,'logout');
     $route->get('/admin-customer-add',Customers::class,'create');
     $route->post('/admin-customer-add',Customers::class,'store');
     $route->get('/admin-customers-transaction-history',Transactions::class,'allHistory');
+    $route->get('/admin-customer-transaction/{id}',Transactions::class,'userHistory');
 
 
    
