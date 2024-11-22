@@ -51,9 +51,14 @@ class Transactions {
         
 
         $transactions=$this->transactionsModel->all('userEmail',$user['email']);
-        dd($transactions);
 
-        return view('');
+        usort($transactions,function($a, $b) {
+            return $b['created_at'] <=> $a['created_at'];
+        });
+       // dd($transactions);
+       $titleHeaders=$user['name'].' Transactions History';
+
+        return view('admin/customer_transactions',compact('user','transactions','titleHeaders'));
     }
 }
 ?>
