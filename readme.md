@@ -1,41 +1,28 @@
 # BanguBank
 
-BanguBank is a simple banking application with features for both 'Admin' and 'Customer' users. It's a HTML template starter pack for Laravel Career Path by Interactive Cares students.
-
-![Admin View](screenshots/admin_preview.png)
-
-![Customer View](screenshots/customers_preview.png)
-
-### Admin Features
-
-- See all transactions made by all users.
-- Search and view transactions by a specific user using their email.
-- View a list of all registered customers.
-
-### Customer Features
-
-- Customers can register using their `name`, `email`, and `password`.
-- Customers can log in using their registered email and password.
-- See a list of all their transactions.
-- Deposit money to their account.
-- Withdraw money from their account.
-- Transfer money to another customer's account by specifying their email address.
-- See the current balance of their account.
+BanguBank is a simple banking application developed using the MVC pattern. It features distinct functionalities for both 'Admin' and 'Customer' users. .
 
 ## Installation
 
-Clone the repository to your local machine:
+1. Clone the repository to your local machine:
+   ```bash
+   git clone https://github.com/Athiqul/mvc-simple-banking-app.git
+   ```
+   ```bash
+   cd mvc-simple-banking-app
+   ```
 
-```bash
-git clone https://github.com/alnahian2003/bangubank.git
-```
+2. Set up the project with the MVC structure:
+   - Copy the files and directories into your PHP project.
+   - Organize them according to your MVC development practices.
 
-```bash
-cd bangubank
-```
+3. **Dependencies:**  
+   Tailwind CSS and Alpine.js are already included via CDN, so no additional installation is required.
 
-## Usage
+4. **Running the Project:**  
+   Use PHP's built-in server to start the application:
+   ```bash
+   php -S localhost:80
+   ```
+   Ensure this step is followed; otherwise, errors may occur.
 
-1. Copy-paste the pages and directories in your own php project
-2. No need to install tailwindcss and alpinejs, as the CDN is already included
-3. seperate each files and components based on your own development technique
