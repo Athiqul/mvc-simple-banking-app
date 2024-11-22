@@ -11,12 +11,12 @@
                     <!-- Current: "bg-sky-700 text-white", Default: "text-white hover:bg-sky-500 hover:bg-opacity-75" -->
                     <a
                       href="<?=App_Url?>admin-dashboard"
-                      class="px-3 py-2 text-sm font-medium text-white rounded-md bg-sky-700"
+                      class="px-3 py-2 text-sm font-medium text-white rounded-md <?=navbarActive('admin-dashboard')?'bg-sky-700':''?>"
                       >Customers</a
                     >
                     <a
                       href="<?=App_Url?>admin-customers-transaction-history"
-                      class="px-3 py-2 text-sm font-medium text-white rounded-md hover:bg-sky-500 hover:bg-opacity-75"
+                      class="<?=navbarActive('admin-customers-transaction-history')?'bg-sky-700':''?> px-3 py-2 text-sm font-medium text-white rounded-md"
                       >Transactions</a
                     >
                   </div>

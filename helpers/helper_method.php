@@ -104,6 +104,18 @@ if(!function_exists('transactionType'))
 
     }
 
+
+    function navbarActive($href):bool
+    {
+         $currentPath=trim($_SERVER['REQUEST_URI'],'/');
+        // dd($currentPath);
+         if($currentPath==$href)
+         {
+            return true;
+         }
+         return false;
+    }
+
 }
 
 
