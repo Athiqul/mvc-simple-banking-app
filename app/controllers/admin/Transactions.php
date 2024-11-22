@@ -7,6 +7,7 @@ class Transactions {
     private $transactionsModel,$userModel;
     public function __construct()
     {
+        middleware('admin');
         $this->userModel = new User();
         $this->transactionsModel = new TransactionModel();
     }

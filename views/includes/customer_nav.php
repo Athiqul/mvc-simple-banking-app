@@ -7,10 +7,10 @@
                 <div class="hidden sm:block">
                   <div class="flex space-x-4">
                     <!-- Current: "bg-emerald-700 text-white", Default: "text-white hover:bg-emerald-500 hover:bg-opacity-75" -->
-                    <a href="<?=App_Url?>customers-dashboard" class="bg-emerald-700 text-white rounded-md py-2 px-3 text-sm font-medium" aria-current="page">Dashboard</a>
-                    <a href="<?=App_Url?>customers-deposit" class="text-white hover:bg-emerald-500 hover:bg-opacity-75 rounded-md py-2 px-3 text-sm font-medium">Deposit</a>
-                    <a href="<?=App_Url?>customers-withdraw" class="text-white hover:bg-emerald-500 hover:bg-opacity-75 rounded-md py-2 px-3 text-sm font-medium">Withdraw</a>
-                    <a href="<?=App_Url?>customers-transfer" class="text-white hover:bg-emerald-500 hover:bg-opacity-75 rounded-md py-2 px-3 text-sm font-medium">Transfer</a>
+                    <a href="<?=App_Url?>customers-dashboard" class="<?=navbarActive('customers-dashboard')?'bg-emerald-700':''?> text-white rounded-md py-2 px-3 text-sm font-medium" aria-current="page">Dashboard</a>
+                    <a href="<?=App_Url?>customers-deposit" class="<?=navbarActive('customers-deposit')?'bg-emerald-700':''?> text-white rounded-md py-2 px-3 text-sm font-medium">Deposit</a>
+                    <a href="<?=App_Url?>customers-withdraw" class="<?=navbarActive('customers-withdraw')?'bg-emerald-700':''?> text-white rounded-md py-2 px-3 text-sm font-medium">Withdraw</a>
+                    <a href="<?=App_Url?>customers-transfer" class="<?=navbarActive('customers-transfer')?'bg-emerald-700':''?> text-white rounded-md py-2 px-3 text-sm font-medium">Transfer</a>
                   </div>
                 </div>
               </div>
